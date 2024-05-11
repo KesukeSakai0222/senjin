@@ -1,16 +1,29 @@
 ---
+import Footer from '../components/footer/Footer.astro';
+import Head from '../components/head/Head.astro';
+import Header from '../components/header/Header.astro';
+import Card from '../components/Card.astro';
 
+const allPosts = await Astro.glob('./blog/*.md');
+
+const title = '千尋の谷に飛び降りる';
+const description = '簡潔に、それでいて深く、ウィットに。考えたことを好きなだけ書く自由帳。';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
+<html lang="ja" class="bg-base">
+	<Head title={title}, description={description}/>
+	<body class="grid min-h-screen auto-rows-[auto_1fr_auto]">
+		<Header/>
+		<main class="sm:p-3 md:w-4/5 mx-auto">
+			<article>
+				<div class="grid">
+					{
+						allPosts.sort((a, b) => new Date(a.frontmatter.pubDate).valueOf() - new Date(b.frontmatter.pubDate).valueOf())
+						.map(post => <Card post={post}/>)
+					}
+				</div>
+			</article>
+		</main>
+		<Footer/>
 	</body>
 </html>

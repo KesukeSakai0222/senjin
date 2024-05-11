@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<header class="text-center">
+    <div class="pt-8 pb-4 text-center">
+        <div class="absolute flex justify-between w-full px-4">
+            <div class="flex my-auto">
+                <a href="https://twitter.com/penguin_UEC"><Icon name="skill-icons:twitter" class="text-3xl mx-2"/></a>
+                <a href="https://misskey.systems/@penguin"><Icon name="skill-icons:misskey-light" class="text-3xl mx-2"/></a>
+            </div>
+            <div class="invisible md:visible">
+                <script async src="https://cse.google.com/cse.js?cx=b3b4d9d2eca8942a8"></script>
+                <div class="gcse-search"></div>    
+            </div>
+        </div>
+        <h1 class="text-4xl text-accent font-title">
+            <a href="/">
+                <ruby>千尋<rt class="font-thin text-xs">せんじん</rt></ruby>に飛び込め!
+            </a>
+        </h1>
+    </div>
+    <nav>
+        <ul class="table table-fixed text-center w-4/5 mx-auto">
+          <li class="table-cell border-b-2 border-b-base hover:border-b-sub"><a href="/" class="w-full">Home</a></li>
+          <li class="table-cell border-b-2 border-b-base hover:border-b-sub"><a href="/about" class="w-full">About</a></li>
+          <li class="table-cell border-b-2 border-b-base hover:border-b-sub"><a href="/blog" class="w-full">Blog</a></li>
+          <li class="table-cell border-b-2 border-b-base hover:border-b-sub"><a href="/contact" class="w-full">Contact</a></li>
+        </ul>
+      </nav>
+</header>

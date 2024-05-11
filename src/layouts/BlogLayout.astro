@@ -1,0 +1,21 @@
+---
+import Footer from "../components/footer/Footer.astro";
+import Head from "../components/head/Head.astro";
+import Header from "../components/header/Header.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const {content} = Astro.props;
+const {title, description, hero, date} = content;
+---
+<html lang="ja" class="bg-base">
+  <Header/>
+  <body class="grid min-h-screen auto-rows-[auto_1fr_auto]">
+    <Head title={title} description={description}/>
+    <main class="sm:p-3 md:w-4/5 mx-auto">
+      <BlogPost title={title} date={date} hero={hero}>
+        <slot/>
+      </BlogPost>
+    </main>
+    <Footer/>
+  </body>
+</html>
