@@ -10,9 +10,24 @@ const { title, date, hero} = Astro.props;
 
 <article>
   <img class="w-20 rounded mx-auto" loading="lazy" src={hero} alt={title}/>
-  <h2 class="text-xl text-center m-4 font-normal">{title}</h2>
-  <p class="text-center">{date}</p>
-  <section class="sentence">
+  <h2 class="text-3xl text-center m-4 font-bold">{title}</h2>
+  <p class="text-center text-sm">{date}</p>
+  <section class="rounded bg-slate-100 px-5
+    [&>h1]:text-2xl [&>h1]:font-bold [&>h1]:mb-4
+    [&>h2]:text-xl [&>h2]:font-bold [&>h2]:mt-4 [&>h2]:py-2 
+    [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mb-4 [&>h3]:py-2 
+    [&>h4]:text-lg [&>h4]:font-semibold [&>h4]:mb-4 [&>h4]:py-2 
+    [&>p]:text-lg [&>p]:mb-6
+    [&>blockquote]:font-medium [&>blockquote]:italic [&>blockquote]:leading-tight [&>blockquote]:bg-gray-200 [&>blockquote]:mx-1 [&>blockquote]:mb-4 [&>blockquote]:py-2
+    [&>img]:my-6
+    [&_a]:font-medium [&_a]:underline [&_a]:text-blue-900 hover:[&_a]:text-black
+    [&>ul]:list-disc [&>ul]:ml-5 [&>ul]:mb-4
+    [&>ol]:list-decimal [&>ol]:ml-5 [&>ol]:mb-4
+    [&_li]:mb-1
+    [&_pre]:p-2 [&_pre]:mb-6
+    [&>table]:text-sm [&>table]:border-collapse [&>table]:w-full [&>table]:border-2 [&>table]:mb-8
+    [&_th]:font-bold [&_th]:border-t-4 [&_th]:border-b [&_th]:p-2
+    [&_td]:border-b [&_td]:p-2">
     <slot/>
   </section>
 </article>

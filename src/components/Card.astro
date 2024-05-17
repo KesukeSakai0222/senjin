@@ -14,13 +14,13 @@ const {post} = Astro.props;
   ? post.frontmatter.hero
   : "/images/no_image.png"} class="max-h-48 p-2"/>
   <div class="p-2">
-    <h3 class="text-2xl text-accent">{post.frontmatter.title}</h3>
-      <div class="flex py-2">
+    <h3 class="text-xl text-accent">{post.frontmatter.title}</h3>
+      <div class="flex py-1">
         <Icon name="mdi:clock-time-nine-outline" class="my-auto"/>
         <p class="text-subAccent text-sm">{post.frontmatter.pubDate}</p>
       </div>
       <div class="flex">
-        {post.frontmatter.tags.map((tag:string) => <p class="text-subAccent">{tag}</p>)}
+        {post.frontmatter.tags.map((tag:string) => <p class="text-subAccent pr-1 py-1">#{tag}</p>)}
       </div>
   </div>
 </a>

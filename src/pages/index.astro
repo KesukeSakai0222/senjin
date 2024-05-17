@@ -14,12 +14,12 @@ const description = '簡潔に、それでいて深く、ウィットに。考�
 	<Head title={title}, description={description}/>
 	<body class="grid min-h-screen auto-rows-[auto_1fr_auto]">
 		<Header/>
-		<main class="sm:p-3 md:w-4/5 mx-auto">
+		<main class="p-3 md:w-4/5 mx-auto">
 			<article>
-				<div class="grid">
+				<div class="grid gap-2">
 					{
 						allPosts.sort((a, b) => new Date(a.frontmatter.pubDate).valueOf() - new Date(b.frontmatter.pubDate).valueOf())
-						.map(post => <Card post={post}/>)
+							.map(post => <Card post={post}/>)
 					}
 				</div>
 			</article>

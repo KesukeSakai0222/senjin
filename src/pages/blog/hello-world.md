@@ -1,18 +1,21 @@
 ---
 title: "最初だからと言って何か壮大なことを書こうとするとまぁ挫折する"
-pubDate: "2024-04-14"
+pubDate: "2024-05-17"
 slug: "hello-world"
 description: "何かを始めることはいつでも尊重されるべき尊いことである。完璧主義を捨て自分自身の自己満足でもって評価せよ"
 hero: "/images/jump.png"
 tags: ["エッセイ"]
 layout: "../../layouts/BlogLayout.astro"
 ---
-せっかくブログをぶち建てようと思ったとき、最初の文章で何かいいこと書いてやろうとすると大体が失敗する。
+せっかくブログをぶち建てようというのに、最初の文章で何かいいこと書いてやろうとすると大体が失敗する。
 
 最初のハードルはなるべく低く、埋まっているくらいで良い。
-本当の敵は自分の完璧主義と怠惰である。
+
+**本当の敵は自分の完璧主義と怠惰である。**
+
 その敵を打ち破るには自分に期待しないこと。
-<small>~~そしてSEO屋のいうような文字数やキーワードを散りばめようなどといったアドバイスに耳を貸さないことだ。~~</small>
+
+<small>~~そしてSEO屋のいうように文字数を気にしたり、キーワードを散りばめようなどといったアドバイスに耳を貸さないことだ。~~</small>
 
 人間の8割はやりたいと思っていてもやらない人だという言説を見かける。
 おそらくはその通りだ。
@@ -33,5 +36,3 @@ layout: "../../layouts/BlogLayout.astro"
 自分が自分にとっての価値観でもってその行動にちゃんと価値付けしてあげることだ。
 
 自分にしてはよくできている、それだけでいいじゃないか。
-
-<a class="img-author" style="font-size: 12px;text-decoration:none" href="https://jp.freepik.com/free-photo/portrait-of-astronaut-in-space-suit-doing-regular-human-activity_144490289.htm#query=%E5%AE%87%E5%AE%99%E3%81%AE%E3%83%8B%E3%83%BC%E3%83%AB%20%E3%82%A2%E3%83%BC%E3%83%A0%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B3%E3%82%B0%E5%86%99%E7%9C%9F&position=0&from_view=keyword&track=ais&uuid=90798278-74f6-4438-80be-7d86ad1fb55c">トップ画像著作：freepik</a>
