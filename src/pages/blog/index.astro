@@ -1,0 +1,34 @@
+---
+import Footer from '../../components/footer/Footer.astro';
+import Head from '../../components/head/Head.astro';
+import Header from '../../components/header/Header.astro';
+import BlogPost from "../../components/BlogPost.astro";
+
+const allPosts = await Astro.glob('./*.md');
+
+const title = 'blog';
+const description = '最近の記事';
+---
+
+<html lang="ja" class="bg-base">
+	<Head title={title}, description={description}/>
+	<body class="grid min-h-screen auto-rows-[auto_1fr_auto]">
+		<Header/>
+		<main class="p-3 md:w-4/5 mx-auto">
+			<article>
+				<div>
+					{
+						allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+							.slice(0, 3)
+							.map(post =>
+									<BlogPost title={post.frontmatter.title} date={post.frontmatter.pubDate} hero={post.frontmatter.hero}>
+										<Fragment set:html={post.compiledContent()}/>
+									</BlogPost>
+							)
+					}
+				</div>
+			</article>
+		</main>
+		<Footer/>
+	</body>
+</html>

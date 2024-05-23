@@ -1,0 +1,20 @@
+---
+import Head from "../components/head/Head.astro"
+import Footer from "../components/footer/Footer.astro"
+import Header from "../components/header/Header.astro";
+
+const title="Contact";
+const description="お問い合わせ";
+---
+
+<html lang="ja" class="bg-base">
+  <Head title={title} description={description}/>
+  <body class="min-h-screen grid auto-rows-[auto_1fr_auto]">
+    <Header/>
+    <main class="sm:p-3 w-4/5 mx-auto">
+      <article>
+        <iframe class="mx-auto" src="https://docs.google.com/forms/d/e/1FAIpQLScOINwHyf9j9FYBMCeYyEVyBfZ-PuvvK_B9xrEk6C8s8gcjHw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    </main>
+    <Footer/>
+  </body>
+</html>

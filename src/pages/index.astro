@@ -5,9 +5,10 @@ import Header from '../components/header/Header.astro';
 import Card from '../components/Card.astro';
 
 const allPosts = await Astro.glob('./blog/*.md');
+const postNum = allPosts.length;
 
 const title = '千尋の谷に飛び降りる';
-const description = '簡潔に、それでいて深く、ウィットに。考えたことを好きなだけ書く自由帳。';
+const description = '考えたことを好きなだけ書く自由帳。';
 ---
 
 <html lang="ja" class="bg-base">
@@ -18,10 +19,18 @@ const description = '簡潔に、それでいて深く、ウィットに。考�
 			<article>
 				<div class="grid gap-2">
 					{
-						allPosts.sort((a, b) => new Date(a.frontmatter.pubDate).valueOf() - new Date(b.frontmatter.pubDate).valueOf())
+						allPosts.slice(0, 10)
+							.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
 							.map(post => <Card post={post}/>)
 					}
 				</div>
+				<div class="flex">
+					{postNum > 10 ?
+						<button class="rounded-md bg-gray-300 px-4 py-2 m-2">
+            <a href="/2">Next</a>
+          </button> : null
+					}
+        </div>
 			</article>
 		</main>
 		<Footer/>

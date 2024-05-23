@@ -1,0 +1,51 @@
+---
+import Footer from '../components/footer/Footer.astro';
+import Head from '../components/head/Head.astro';
+import Header from '../components/header/Header.astro';
+import Card from '../components/Card.astro';
+
+const allPosts = await Astro.glob('./blog/*.md');
+
+export const getStaticPaths = () => {
+  return [...Array(10).keys()].map(key => ({params : {
+    page: key + 1
+  }}));
+}
+
+const {page} = Astro.params;
+const postNum = allPosts.length;
+
+const title = '千尋の谷に飛び降りる';
+const description = '考えたことを好きなだけ書く自由帳。';
+---
+
+<html lang="ja" class="bg-base">
+	<Head title={title}, description={description}/>
+	<body class="grid min-h-screen auto-rows-[auto_1fr_auto]">
+		<Header/>
+		<main class="p-3 md:w-4/5 mx-auto">
+			<article>
+				<div class="grid gap-2">
+					{
+						allPosts.slice((page - 1) * 10, page * 10)
+							.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+							.map(post => <Card post={post}/>)
+					}
+				</div>
+        <div class="flex">
+          {page != 1 ?
+            <button class="rounded-md bg-gray-300 px-4 py-2 m-2">
+            <a href={Number(page) - 1}>Prev</a>
+          </button> : null
+          }
+          {postNum > Number(page) * 10 ?
+						<button class="rounded-md bg-gray-300 px-4 py-2 m-2">
+            <a href={Number(page) + 1}>Next</a>
+          </button> : null
+					}
+        </div>
+			</article>
+		</main>
+		<Footer/>
+	</body>
+</html>
