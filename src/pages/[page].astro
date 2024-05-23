@@ -35,12 +35,12 @@ const description = '考えたことを好きなだけ書く自由帳。';
         <div class="flex">
           {page != 1 ?
             <button class="rounded-md bg-gray-300 px-4 py-2 m-2">
-            <a href={Number(page) - 1}>Prev</a>
+            <a href={(Number(page) - 1).toString()}>Prev</a>
           </button> : null
           }
           {postNum > Number(page) * 10 ?
 						<button class="rounded-md bg-gray-300 px-4 py-2 m-2">
-            <a href={Number(page) + 1}>Next</a>
+            <a href={(Number(page) + 1).toString()}>Next</a>
           </button> : null
 					}
         </div>
